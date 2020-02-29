@@ -1,0 +1,18 @@
+<!--components/homePage/homePage.wxml-->
+<scroll-view scroll-y class="home-container">
+    <view class="sort-list">
+        <view class="sort-item">
+            <view class="title-bar">
+              <view class="title">热门歌曲</view>
+              <!-- <view class="more">更多 ></view> -->
+            </view>
+            <view class="item-list" style="padding-bottom: {{tabBarHeight}}px">
+                <view class="item" wx:for="{{audioList}}" wx:key="id">
+                    <image bindtap="playMusic" data-id="{{item.id}}" data-state="{{item.state}}" class="cover" src="{{item.cover}}"></image>
+                    <view class="song text-ellipsis">{{item.song}}</view>
+                    <view class="singer text-ellipsis">{{item.singer}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,38 @@
+<view class="mine-container">
+  <view class="bg-box">
+    <open-data class="bg-img" type="userAvatarUrl"></open-data>
+    <view class="cover-mask"></view>
+    <view class="avatar-box">
+      <open-data class="avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <open-data class="nickname" type="userNickName"></open-data>
+  </view>
+  <view class="my-list">
+    <view class="title">我的歌单</view>
+    <scroll-view scroll-y class="list">
+      <view class="list-item" wx:for="{{audioList}}" wx:key="id">
+        <view class="left">{{index+1}}</view>
+        <view class="right">
+          <view class="song-main">
+            <view class="song-info {{item.id === currentAudio.id? 'active':''}}">
+              <view class="song-name text-ellipsis">{{item.song}}</view>
+              <view class="singer text-ellipsis">{{item.singer}}</view>
+            </view>
+            <view wx:if="{{item.id === currentAudio.id}}" class="wave {{item.state?'run':''}}">
+              <view class="wave-item"></view>
+              <view class="wave-item"></view>
+              <view class="wave-item"></view>
+              <view class="wave-item"></view>
+            </view>
+          </view>
+          <view class="play-box">
+            <image bindtap="playMusic" data-id="{{item.id}}" data-state="{{item.state}}" class="icon-play" 
+              src="{{item.state?'/images/pause_1.png':'/images/play_1.png'}}"></image>
+          </view>
+        </view>
+      </view>
+      <view style="height: {{tabBarHeight}}px;"></view>
+    </scroll-view>
+  </view>
+</view>
+

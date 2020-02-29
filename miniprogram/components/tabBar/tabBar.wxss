@@ -1,0 +1,102 @@
+/* components/tabBar/tabBar.wxss */
+.tab-bar-container {
+  position: fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  padding: 0 100rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,.95);
+  box-shadow:0px 0px 16rpx rgba(0,0,0,.1);
+  z-index: 999;
+}
+.tab-bar-container .live-box {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-top: -70rpx;
+  margin-left: -70rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #f6f6f6;
+  box-shadow: 0 0 16rpx rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.tab-bar-container .live-box .live-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  vertical-align: top;
+  animation: rotate linear 30s infinite;
+  animation-play-state: paused;
+}
+.tab-bar-container .live-box .live-img.run {
+  animation-play-state: running;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+.toggle-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64rpx;
+  height: 64rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.5)
+}
+.tab-bar-container .item {
+  width: 64rpx;
+  padding: 16rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tab-bar-container .item .img-box {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-bar-container .item .img {
+  width: 56rpx;
+  height: 56rpx;
+  overflow: hidden;
+}
+.tab-bar-container .item .img.active {
+  width: 60rpx;
+  height: 60rpx;
+  border: 2rpx solid rgba(249,190,0,.7);
+}
+
+.tab-bar-container .item .title {
+  margin-top: 8rpx;
+  font-size: 12px;
+  color: #939393;
+}
+
+.avatar-box {
+  vertical-align: top;
+  border-radius: 50%;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}

@@ -1,0 +1,21 @@
+<!--components/tabBar/tabBar.wxml-->
+<view id="tabbar" class="tab-bar-container">
+  <view bindtap="togglePage" data-page="home" class="home item">
+    <view class="img-box">
+      <image class="img" src="{{currentPage === 'home'?'/images/music_active.png':'/images/music.png'}}"></image>
+    </view>
+    <view class="title">热门</view>
+  </view>
+  <view class="live-box">
+    <image class="live-img {{rotate?'run':''}}" src="{{cover}}"></image>
+    <image hidden="{{currentAudio.id <= 0}}" bindtap="toggleState" class="toggle-img" src="{{currentAudio.state ? '/images/pause_3.png':'/images/play_3.png'}}"></image>
+  </view>
+  <view bindtap="togglePage" data-page="mine" class="mine item">
+    <view class="img-box">
+      <view class="img avatar-box {{currentPage === 'mine'?'active':''}}">
+        <open-data class="avatar" type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+    <view class="title">我的</view>
+  </view>
+</view>

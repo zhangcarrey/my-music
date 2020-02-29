@@ -1,0 +1,17 @@
+<!--pages/index/index.wxml-->
+<view class="home-box {{currentPage === 'home'?'show-page':''}}">
+  <home tabBarHeight="{{tabBarHeight}}" audioList="{{audioList}}" bindaudiochange="audioChange"></home>
+</view>
+<view class="mine-box {{currentPage === 'mine'?'show-page':''}}">
+  <mine tabBarHeight="{{tabBarHeight}}" currentAudio="{{currentAudio}}" audioList="{{audioList}}" bindaudiochange="audioChange"></mine>
+</view>
+<tabBar
+  audioList="{{audioList}}" 
+  currentAudio="{{currentAudio}}" 
+  bindpagechange="pageChange"
+  bindstatechange="stateChange"
+  bindcaltabbarheight="caltabbarheight"
+>
+</tabBar>
+
+

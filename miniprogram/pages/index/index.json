@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabBar": "../../components/tabBar/tabBar",
+    "home": "../../components/home/home",
+    "mine": "../../components/mine/mine"
+  }
+}
